@@ -1,0 +1,49 @@
+.popup{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 0;
+    right: 0;
+    background-color:rgba(0, 0, 0, 0.5);
+    width:100vw;
+    height: 100vh;
+  /* transform: translate(-50%, -50%); */
+}
+.popup__container{
+margin:auto;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding:36px;
+    max-width: 430px;
+}
+
+.popup__close-btn{
+    position:absolute;
+    right:0;
+}
+
+.popup__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.popup__title{
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+    text-align: left; 
+    color:black;
+}
+
+.popup__field{
+    background-color: transparent;
+    border-width:0 0 1px 0;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.popup__field-submit{
+    color:#FFFFFF;
+    background: #000000;
+border-radius: 2px;
+padding: 15px 125px 18px;
+}
