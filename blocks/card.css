@@ -1,7 +1,7 @@
 .card{
     border-radius: 10px;
     background-color: white;
-    width:30%;
+    width:31.5%;
     flex-grow: 1;
 }
 
@@ -41,4 +41,13 @@ text-overflow: ellipsis;
     background-image: url(../images/cards/card-icon.svg);
     border:white 1px solid;
     cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+    .card{
+        border-radius: 10px;
+        background-color: white;
+        width:100%;
+        flex-grow: 1;
+    }
 }
