@@ -17,10 +17,10 @@ The 4th webproject from practicum webdevelopment course which intreduces javascr
 
 **Figma**
 
-
+**Pictures**
 
 
 **Links**
 
 * [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
-* [Link to the project on Github pages](https://alon-sachs.github.io/web_project_3/)  
+* [Link to the project on Github pages](https://alon-sachs.github.io/web_project_4/)  
