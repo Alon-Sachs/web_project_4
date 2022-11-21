@@ -17,92 +17,78 @@
     <div class="page">
         <header class="header">
             <img src="./images/logo.svg" alt="Around The U.S. logo" class="header__logo">
-            <div class="header__divider"></div>
         </header>
         <main class="content">
             <section class="profile">
                 <img src="./images/profile/profile__img.png" alt="Profile picture" class="profile__img">
                 <div class="profile__info">
                     <h1 class="profile__info-name">Jacques Cousteau</h1>
-                    <button class="profile__info-btn"></button>
+                    <button class="profile__info-btn" type="button"></button>
                     <p class="profile__info-job">Explorer</p>
                 </div>
-                <form class="profile__form">
-                    <input type="submit" value="" class="profile__add-btn">
-                </form>
+                    <button class="profile__add-btn" type="button"></button>
             </section>
             <section class="cards">
                 <div class="card">
                     <img src="./images/cards/Yosemite_Valley.png" alt="Yosemite Vally" class="card__img">
                     <div class="card__infobar">
-                        <h2 class="card__title">Yosemite Vally</h2>
-                        <form class="card__form">
-                            <input type="submit" value="" class="card__icon">
-                        </form>
+                        <h2 class="card__title">Yosemite Vally</h2> 
+                        <button class="card__icon" type="button"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/cards/Lake_Louise.png" alt="Lake Louise" class="card__img">
                     <div class="card__infobar">
                         <h2 class="card__title">Lake Louise</h2>
-                        <form class="card__form">
-                            <input type="submit" value="" class="card__icon">
-                        </form>
+                        <button class="card__icon" type="button"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/cards/Bald_Mountains.png" alt="Bald Mountains" class="card__img">
                     <div class="card__infobar">
                         <h2 class="card__title">Bald Mountains</h2>
-                        <form class="card__form">
-                            <input type="submit" value="" class="card__icon">
-                        </form>
+                        <button class="card__icon" type="button"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/cards/Latemar.png" alt="Latemar" class="card__img">
                     <div class="card__infobar">
                         <h2 class="card__title">Latemar</h2>
-                        <form class="card__form">
-                            <input type="submit" value="" class="card__icon">
-                        </form>
+                        <button class="card__icon" type="button"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/cards/Vanoise_National_Park.png" alt="Vanoise National Park" class="card__img">
                     <div class="card__infobar">
                         <h2 class="card__title">Vanoise National Park</h2>
-                        <form class="card__form">
-                        </form>
+                        <button class="card__icon" type="button"></button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/cards/Lago_di_Braies.png" alt="Lago di Braies" class="card__img">
                     <div class="card__infobar">
                         <h2 class="card__title">Lago di Braies</h2>
-                        <form class="card__form">
-                            <input type="submit" value="" class="card__icon">
-                        </form>
+                        <button class="card__icon" type="button"></button>
                     </div>
                 </div>
             </section>
         </main>
         <footer class="footer">
-            <h3 class="footer__title">© 2021 Around The U.S.</h3>
+            <p class="footer__title">© 2021 Around The U.S.</p>
         </footer>
-        <section class="popup">
+        <div class="popup">
             <div class="popup__close-container">
-            <img src="./images/popup/close_icon.svg" alt="close icon" class="popup__close-btn">
+            <button class="popup__close-btn" type="button"></button>   
             </div>
             <div class="popup__container">
                 <h4 class="popup__title">Edit profile</h4>
                 <form class="popup__form">
-                    <input type="text" class="popup__field popup__field-name">
-                    <input type="text" class="popup__field popup__field-job">
-                    <input type="submit" value="Save" class="popup__field popup__field-submit">
+                    <input type="text" name="name" value="" class="popup__field popup__field_type_name">
+                    <input type="text" name="job" value="" class="popup__field popup__field_type_job">
+                    <button type="submit" class="popup__field-submit">Save</button>
                 </form>
             </div>
-        </section>
+        </div>
     </div>
     <script src="./scripts/popup.js"></script>
 </body>

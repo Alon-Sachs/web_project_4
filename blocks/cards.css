@@ -1,6 +1,12 @@
-.cards{
+.cards {
     display: flex;
     flex-flow: row wrap;
-    gap:20px 17px;
+    gap: 20px 17px;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .cards {
+        margin: 0 19px;
+    }
 }

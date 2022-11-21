@@ -1,69 +1,66 @@
-.card{
+.card {
     border-radius: 10px;
     background-color: white;
-    width:31.5%;
+    width: 31.5%;
     flex-grow: 1;
 }
 
-.card__infobar{
-    display:flex;
+.card__infobar {
+    display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: baseline;
-    padding:25px 32px 31px 21px;
+    padding: 25px 20px 31px 20px;
 }
 
-.card__img{
+.card__img {
     border-radius: 10px 10px 0 0;
     max-width: 100%;
     object-fit: fill;
 }
 
-.card__title{
-font-size: 24px;
-font-weight: 900;
-line-height: 29px;
-letter-spacing: 0em;
-text-align: left;
-color:black;
-margin:0;
-text-overflow: ellipsis;
+.card__title {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: black;
+    margin: 0;
+    text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
-.card__icon{
+.card__icon {
     width: 21px;
     height: 19px;
-    background-color:transparent;
-    background-size:contain;
+    background-color: transparent;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url(../images/cards/card-icon.svg);
-    border:white 1px solid;
+    border: white 1px solid;
     cursor: pointer;
     transition: opacity linear 0.3s;
 }
 
-.card__icon_active{
+.card__icon_active {
     background-image: url(../images/cards/card-icon_black.svg);
 }
 
-.card__icon:hover{
-    opacity: 0.6;
+.card__icon:hover {
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 768px) {
-    .card{
-        border-radius: 10px;
-        background-color: white;
-        width:45%;
-        flex-grow: 1;
+    .card {
+        width: 45%;
     }
 }
 
-@media screen and (max-width: 320px) {
-    .card{
-        width:100%;
+@media screen and (max-width: 370px) {
+    .card {
+        width: 100%;
     }
 }
