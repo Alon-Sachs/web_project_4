@@ -33,7 +33,6 @@ text-overflow: ellipsis;
 .card__icon{
     width: 21px;
     height: 19px;
-    /* padding: 0; */
     background-color:transparent;
     background-size:contain;
     background-repeat: no-repeat;
@@ -41,13 +40,28 @@ text-overflow: ellipsis;
     background-image: url(../images/cards/card-icon.svg);
     border:white 1px solid;
     cursor: pointer;
+    transition: opacity linear 0.3s;
+}
+
+.card__icon_active{
+    background-image: url(../images/cards/card-icon_black.svg);
+}
+
+.card__icon:hover{
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+    .card{
+        border-radius: 10px;
+        background-color: white;
+        width:45%;
+        flex-grow: 1;
+    }
 }
 
 @media screen and (max-width: 320px) {
     .card{
-        border-radius: 10px;
-        background-color: white;
         width:100%;
-        flex-grow: 1;
     }
 }
