@@ -2,15 +2,25 @@
 
 ### Overview
 
-* Figma
-* Images
+**Technologies used**
+
+* HTML5 
+* Flat BEM
+* CSS (Flexbox and Grid , Media queries)
+* Javascript (Event listeners and DOM Manipulation)
+* Figma 
+* Resposive web design
+
+**Intro**    
+  
+The 4th webproject from practicum webdevelopment course which intreduces javascript, A blog for views around the us which includes editable profile and inserting mechanism
 
 **Figma**
 
+
+
+
+**Links**
+
 * [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
-
-**Images**
-
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-
-Have fun with JavaScript!
+* [Link to the project on Github pages](https://alon-sachs.github.io/web_project_3/)  

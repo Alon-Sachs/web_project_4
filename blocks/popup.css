@@ -78,9 +78,15 @@
 .popup__field-submit{
     color:#FFFFFF;
     background: #000000;
-border-radius: 2px;
-padding: 15px 150px 18px;
-margin-top:48px;
+    border-radius: 2px;
+    padding: 15px 150px 18px;
+    margin-top:48px;
+    transition: opacity linear 0.3s;
+    cursor: pointer;
+}
+
+.popup__field-submit:hover{
+    opacity:0.8;
 }
 
 .popup_opened{
