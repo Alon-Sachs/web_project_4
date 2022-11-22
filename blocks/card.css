@@ -1,13 +1,11 @@
 .card {
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: white;
-    width: 31.5%;
-    flex-grow: 1;
 }
 
 .card__infobar {
-    display: flex;
-    flex-flow: row nowrap;
+    display: grid;
+    grid-template-columns: 1fr 24px;
     justify-content: space-between;
     align-items: baseline;
     padding: 25px 20px 31px 20px;
@@ -30,6 +28,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    max-width: 90%;
 }
 
 .card__icon {
@@ -51,16 +50,4 @@
 
 .card__icon:hover {
     opacity: 0.5;
-}
-
-@media screen and (max-width: 768px) {
-    .card {
-        width: 45%;
-    }
-}
-
-@media screen and (max-width: 370px) {
-    .card {
-        width: 100%;
-    }
 }

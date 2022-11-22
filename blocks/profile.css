@@ -18,13 +18,13 @@
 }
 
 .profile__info {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 24px;
+    grid-template-rows: 1fr auto;
     gap: 18px 16px;
     margin-right: auto;
     max-width: 550px;
+    align-items: flex-end;
 }
 
 .profile__info-name {
@@ -35,13 +35,12 @@
     font-weight: 500;
     line-height: 48px;
     margin: 0;
-    max-width: 400px;
 }
 
 .profile__info-btn {
-    margin-top: 10px;
     width: 26px;
     height: 26px;
+    margin-bottom: 7px;
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
@@ -54,12 +53,13 @@
 }
 
 .profile__info-job {
-    flex-basis: 100%;
-    max-width: 300px;
+    flex-basis: 50%;
+    max-width: 250px;
     margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    grid-column: 1 / span 2;
 }
 
 .profile__form {
@@ -97,7 +97,6 @@
     .profile__info {
         max-width: 100%;
         align-items: center;
-        justify-content: center;
         text-align: center;
         margin-right: 0;
     }
@@ -122,9 +121,6 @@
     .profile__info-btn {
         width: 20px;
         height: 20px;
-    }
-
-    .profile__info-job {
-        max-width: 60%;
+        margin-bottom: 0;
     }
 }
