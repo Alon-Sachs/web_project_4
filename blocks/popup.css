@@ -13,7 +13,8 @@
 }
 
 .popup__container {
-    margin: 0 auto;
+    position: relative;
+    margin: 40px;
     background-color: #FFFFFF;
     border-radius: 10px;
     padding: 36px;
@@ -21,19 +22,12 @@
     max-width: 358px;
 }
 
-.popup__close-container {
-    display: flex;
-    justify-content: flex-end;
-    margin: 0 auto;
-    border-radius: 10px;
-    padding: 36px 0 5px 50px;
-    width: 100%;
-    max-width: 430px;
-}
-
 .popup__close-btn {
-    width: 24px;
-    height: 24px;
+    position: absolute;
+    right: -45px;
+    top: -45px;
+    width: 40px;
+    height: 40px;
     padding: 0;
     background-color: transparent;
     background-size: cover;
@@ -90,6 +84,7 @@
     margin-top: 48px;
     transition: opacity linear 0.3s;
     cursor: pointer;
+    border:none;
 }
 
 .popup__field-submit:hover {
@@ -121,6 +116,13 @@
     }
 
     .popup__close-btn {
+        height: 26px;
+    }
+
+    .popup__close-btn {
+        right: 0;
+        top: -39px;
+        width: 26px;
         height: 26px;
     }
 
