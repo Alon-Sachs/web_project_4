@@ -35,7 +35,7 @@
         <footer class="footer">
             <p class="footer__title">© 2021 Around The U.S.</p>
         </footer>
-        <div class="popup">
+        <div class="popup profile-popup">
             <div class="popup__container">
                 <button class="popup__close-btn" type="button"></button>
                 <h4 class="popup__title">Edit profile</h4>
@@ -46,20 +46,20 @@
                 </form>
             </div>
         </div>
-        <div class="card-popup">
+        <div class="popup card-popup">
             <div class="card-popup__container">
                 <button class="card-popup__close-btn" type="button"></button>
                 <h4 class="card-popup__title">New Place</h4>
                 <form class="card-popup__form">
                     <input type="text" name="title" value="" class="card-popup__field_type_title card-popup__field"
-                        placeholder="Title">
+                        placeholder="Title" required>
                     <input type="text" name="link" value="" class="card-popup__field_type_link card-popup__field"
-                        placeholder="Image URL">
+                        placeholder="Image URL" required>
                     <button type="submit" class="card-popup__field-submit">Create</button>
                 </form>
             </div>
         </div>
-        <div class="img-popup">
+        <div class="popup img-popup">
             <div class="img-popup__container">
                 <button class="img-popup__close-btn" type="button"></button>
                 <img class="img-popup__img">
@@ -77,10 +77,8 @@
             </div>
         </div>
     </template>
-    <script src="./scripts/popup.js"></script>
-    <script src="./scripts/cards.js"></script>
-    <script src="./scripts/card-popup.js"></script>
-    <script src="./scripts/img-popup.js"></script>
+    <script src="./scripts/popup.js" defer></script>
+    <script src="./scripts/cards.js" defer></script>
 </body>
 
 </html>
