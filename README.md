@@ -13,7 +13,12 @@
 
 **Intro**    
   
-The 4th webproject from practicum webdevelopment course which intreduces javascript, A blog for views around the us which includes editable profile and inserting mechanism
+The 4th webproject from practicum webdevelopment course which intreduces javascript, A blog for views around the us which includes editable profile and inserting mechanism.
+
+New features with project 5 of practicum:
+Now can add/delete places
+Click on image to zoom on it
+New animations
 
 **Figma**
 

@@ -1,6 +1,8 @@
 .card {
     border-radius: 15px;
     background-color: white;
+    position: relative;
+    max-height: 361px;
 }
 
 .card__infobar {
@@ -13,8 +15,11 @@
 
 .card__img {
     border-radius: 10px 10px 0 0;
+    max-height: 100%;
     max-width: 100%;
-    object-fit: fill;
+    height: 282px;
+    width: 282px;
+    object-fit: cover;
 }
 
 .card__title {
@@ -44,10 +49,36 @@
     transition: opacity linear 0.3s;
 }
 
+.card__icon-bin {
+    width: 18px;
+    height: 19px;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/cards/card-icon-bin.svg);
+    border: none;
+    cursor: pointer;
+    transition: opacity linear 0.3s;
+    position: absolute;
+    right: 15px;
+    top: 18px;
+}
+
+.card__icon-bin:hover {
+    opacity: 0.5;
+}
+
 .card__icon_active {
     background-image: url(../images/cards/card-icon_black.svg);
 }
 
 .card__icon:hover {
     opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+    .card__img {
+        width: 100%;
+    }
 }

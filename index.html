@@ -29,48 +29,7 @@
                     <button class="profile__add-btn" type="button"></button>
             </section>
             <section class="cards">
-                <div class="card">
-                    <img src="./images/cards/Yosemite_Valley.png" alt="Yosemite Vally" class="card__img">
-                    <div class="card__infobar">
-                        <h2 class="card__title">Yosemite Vally</h2> 
-                        <button class="card__icon" type="button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./images/cards/Lake_Louise.png" alt="Lake Louise" class="card__img">
-                    <div class="card__infobar">
-                        <h2 class="card__title">Lake Louise</h2>
-                        <button class="card__icon" type="button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./images/cards/Bald_Mountains.png" alt="Bald Mountains" class="card__img">
-                    <div class="card__infobar">
-                        <h2 class="card__title">Bald Mountains</h2>
-                        <button class="card__icon" type="button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./images/cards/Latemar.png" alt="Latemar" class="card__img">
-                    <div class="card__infobar">
-                        <h2 class="card__title">Latemar</h2>
-                        <button class="card__icon" type="button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./images/cards/Vanoise_National_Park.png" alt="Vanoise National Park" class="card__img">
-                    <div class="card__infobar">
-                        <h2 class="card__title">Vanoise National Park</h2>
-                        <button class="card__icon" type="button"></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./images/cards/Lago_di_Braies.png" alt="Lago di Braies" class="card__img">
-                    <div class="card__infobar">
-                        <h2 class="card__title">Lago di Braies</h2>
-                        <button class="card__icon" type="button"></button>
-                    </div>
-                </div>
+                
             </section>
         </main>
         <footer class="footer">
@@ -87,8 +46,38 @@
                 </form>
             </div>
         </div>
+        <div class="card-popup">
+            <div class="card-popup__container">
+                <button class="card-popup__close-btn" type="button"></button> 
+                <h4 class="card-popup__title">New Place</h4>
+                <form class="card-popup__form">
+                    <input type="text" name="title" value="" class="popup__field card-popup__field_type_title" placeholder="Title">
+                    <input type="text" name="link" value="" class="popup__field card-popup__field_type_link" placeholder="Image URL">
+                    <button type="submit" class="card-popup__field-submit">Create</button>
+                </form>
+            </div>
+        </div>
+        <div class="img-popup">
+            <div class="img-popup__container">
+                <button class="img-popup__close-btn" type="button"></button>
+                <img class="img-popup__img">
+                <h4 class="img-popup__title"></h4>
+            </div>
+        </div>
     </div>
+    <template id="card-template">
+        <div class="card">
+            <button class="card__icon-bin" type="button"></button>
+            <img class="card__img">
+            <div class="card__infobar">
+                <h2 class="card__title"></h2> 
+                <button class="card__icon" type="button"></button>
+            </div>
+    </template>
     <script src="./scripts/popup.js"></script>
+    <script src="./scripts/cards.js"></script>
+    <script src="./scripts/card-popup.js"></script>
+    <script src="./scripts/img-popup.js"></script>
 </body>
 
 </html>
