@@ -68,10 +68,6 @@
     }
 
     .img-popup__close-btn {
-        height: 26px;
-    }
-
-    .img-popup__close-btn {
         right: -32px;
         top: -35px;
         width: 30px;

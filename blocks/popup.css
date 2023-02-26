@@ -120,10 +120,6 @@
     }
 
     .popup__close-btn {
-        height: 26px;
-    }
-
-    .popup__close-btn {
         right: 0;
         top: -39px;
         width: 26px;
