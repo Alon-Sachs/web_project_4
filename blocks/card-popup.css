@@ -98,12 +98,4 @@
         width: 100%;
         max-width: 282px;
     }
-
-    .card-popup__close-btn {
-        right: 0;
-        top: -39px;
-        width: 26px;
-        height: 26px;
-    }
-
 }

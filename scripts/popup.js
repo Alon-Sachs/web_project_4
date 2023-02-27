@@ -1,6 +1,6 @@
 //profile edit form elements
 const editProfileButton = document.querySelector(".profile__info-btn");
-const editProfileCloseButton = document.querySelector(".popup__close-btn");
+const editProfileCloseButton = document.querySelector(".profile-popup__close-btn");
 const editProfilePopup = document.querySelector(".profile-popup");
 const editProfileForm = editProfilePopup.querySelector(".popup__form");
 const profileJobField = document.querySelector(".profile__info-job");
@@ -46,11 +46,11 @@ function createCard(data) {
         e.target.parentElement.remove();
     })
     cardImg.addEventListener("click", (e) => {
-        const imageTitle = e.target.parentElement.querySelector(".card__title").textContent;
+        const imageTitle = data.name;
         imagePopupImage.src = e.target.src;
         imagePopupImage.alt = imageTitle;
         imagePopupTitle.textContent = imageTitle;
-        imagePopup.classList.toggle("popup_opened");
+        openPopup(imagePopup);
     })
     cardImg.src = data.link;
     cardImg.alt = data.name;
