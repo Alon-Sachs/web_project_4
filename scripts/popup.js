@@ -15,8 +15,8 @@ const newCardPopup = document.querySelector(".card-popup");
 const newCardPopupButton = document.querySelector(".profile__add-btn");
 const newCardPopupCloseButton = document.querySelector(".card-popup__close-btn");
 const cardFormElement = newCardPopup.querySelector(".card-popup__form");
-const cardTitle = newCardPopup.querySelector(".card-popup__field_type_title");
-const cardLink = newCardPopup.querySelector(".card-popup__field_type_link");
+const cardTitle = newCardPopup.querySelector(".card-popup__field_title");
+const cardLink = newCardPopup.querySelector(".card-popup__field_link");
 const cardTemplate = document.querySelector("#card-template").content;
 const cardsContainer = document.querySelector(".cards");
 const imagePopupImage = document.querySelector(".img-popup__img");
@@ -110,7 +110,7 @@ popups.forEach(popup => {
 
 document.addEventListener("keydown", (evt) => {
     const popup = document.querySelector(".popup_opened");
-    if (evt.key = "Escape" && popup)
+    if (evt.key === "Escape" && popup)
     {
     closePopup(popup);
     }

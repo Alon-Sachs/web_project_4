@@ -27,7 +27,6 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   };
   
   const toggleButtonState = (inputList, buttonElement) => {
-    console.log(hasInvalidInput(inputList));
     if (hasInvalidInput(inputList)) {
       buttonElement.classList.add("popup__field-submit_inactive");
     } else {
