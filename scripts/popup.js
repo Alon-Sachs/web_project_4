@@ -1,3 +1,5 @@
+const popups = Array.from(document.querySelectorAll(".popup"));
+
 //profile edit form elements
 const editProfileButton = document.querySelector(".profile__info-btn");
 const editProfileCloseButton = document.querySelector(".profile-popup__close-btn");
@@ -98,3 +100,18 @@ newCardPopupButton.addEventListener('click', () => openPopup(newCardPopup));
 newCardPopupCloseButton.addEventListener('click', () => closePopup(newCardPopup));
 
 imgPopupCloseButton.addEventListener('click', () => closePopup(imagePopup));
+
+popups.forEach(popup => {
+    popup.addEventListener("click", (evt) => {
+        if (evt.target.classList.contains("popup"))
+        closePopup(popup);
+    })
+})
+
+document.addEventListener("keydown", (evt) => {
+    const popup = document.querySelector(".popup_opened");
+    if (evt.key = "Escape" && popup)
+    {
+    closePopup(popup);
+    }
+})
