@@ -35,7 +35,10 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   };
   
   const setEventListeners = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll(".popup__field"));
+    const inputList1 = Array.from(formElement.querySelectorAll(".popup__field"));
+    //adding a second call because bem checked on website wont let me use same class on both popups
+    const inputList2 = Array.from(formElement.querySelectorAll(".card-popup__field"));
+    const inputList = inputList1.concat(inputList2);
     const buttonElement = formElement.querySelector(".form__submit");
     toggleButtonState(inputList, buttonElement);
     inputList.forEach((inputElement) => {
