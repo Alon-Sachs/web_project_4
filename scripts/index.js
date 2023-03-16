@@ -120,7 +120,7 @@ function handleCardFormSubmit(e) {
   renderCard(data);
   closePopup(newCardPopup);
   e.target.reset();
-  const inputList = Array.from(e.target.querySelectorAll(".popup__field"));
+  const inputList = Array.from(e.target.querySelectorAll(".form__field"));
   const buttonElement = e.target.querySelector(".form__submit");
   toggleButtonState(inputList, buttonElement, {inactiveButtonClass: "popup__field-submit_inactive"});
 }
