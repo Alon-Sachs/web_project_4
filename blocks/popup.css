@@ -71,6 +71,10 @@
     border-color: rgba(0, 0, 0, 0.2);
 }
 
+.popup__field-error {
+    border-color: #FF0000;
+}
+
 .popup__field:focus {
     outline: none;
 }
