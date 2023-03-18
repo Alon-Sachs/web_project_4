@@ -40,9 +40,9 @@
                 <button class="profile-popup__close-btn popup__close-btn" type="button"></button>
                 <h4 class="popup__title">Edit profile</h4>
                 <form class="popup__form form" novalidate>
-                    <input required id="name-input" type="text" name="name" value="" class="form-field popup__field_type_name" minlength="2" maxlength="40">
+                    <input required id="name-input" type="text" name="name" value="" class="form__input popup__input_name" minlength="2" maxlength="40">
                     <span class="popup__input-error name-input-error"></span>
-                    <input required id="job-input" type="text" name="job" value="" class="form-field popup__field_type_job" minlength="2" maxlength="200">
+                    <input required id="job-input" type="text" name="job" value="" class="form__input popup__input_job" minlength="2" maxlength="200">
                     <span class="popup__input-error job-input-error"></span>
                     <button type="submit" class="popup__field-submit form__submit">Save</button>
                 </form>
@@ -53,10 +53,10 @@
                 <button class="card-popup__close-btn popup__close-btn" type="button"></button>
                 <h4 class="card-popup__title">New Place</h4>
                 <form class="card-popup__form form" novalidate>
-                    <input id="title-input" type="text" name="title" value="" class="card-popup__field_title form-field"
+                    <input id="title-input" type="text" name="title" value="" class="card-popup__input_title form__input"
                         placeholder="Title" required minlength="1" maxlength="30">
                         <span class="popup__input-error title-input-error"></span>
-                    <input id="url-input" type="url" name="link" value="" class="form-field card-popup__field_link"
+                    <input id="url-input" type="url" name="link" value="" class="card-popup__input_link form__input"
                         placeholder="Image URL" required>
                         <span class="popup__input-error url-input-error"></span>
                     <button type="submit" class="card-popup__field-submit form__submit">Create</button>
