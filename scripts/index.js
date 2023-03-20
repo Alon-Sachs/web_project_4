@@ -32,15 +32,17 @@ const imagePopup = document.querySelector(".img-popup");
 
 //general functions
 function closePopupEventEscape(evt) {
-  const popup = document.querySelector(".popup_opened");
   if (evt.key === "Escape") {
+    const popup = document.querySelector(".popup_opened");
     closePopup(popup);
   }
 }
 
 function closePopupEventClick(evt) {
-  const popup = document.querySelector(".popup_opened");
-  if (evt.target.classList.contains("popup_opened")) closePopup(popup);
+  if (evt.target.classList.contains("popup_opened")) {
+    const popup = document.querySelector(".popup_opened");
+    closePopup(popup);
+  }
 }
 
 function openPopup(popup) {
@@ -120,9 +122,9 @@ function handleCardFormSubmit(e) {
   renderCard(data);
   closePopup(newCardPopup);
   e.target.reset();
-  const inputList = Array.from(e.target.querySelectorAll(".form__field"));
+  const inputList = Array.from(e.target.querySelectorAll(".form__input"));
   const buttonElement = e.target.querySelector(".form__submit");
-  toggleButtonState(inputList, buttonElement, {inactiveButtonClass: "popup__field-submit_inactive"});
+  toggleButtonState(inputList, buttonElement, { inactiveButtonClass: "popup__field-submit_inactive" });
 }
 
 cardFormElement.addEventListener("submit", handleCardFormSubmit);
@@ -132,3 +134,5 @@ newCardPopupCloseButton.addEventListener("click", () =>
 );
 
 imgPopupCloseButton.addEventListener("click", () => closePopup(imagePopup));
+
+initialCards.forEach(renderCard);

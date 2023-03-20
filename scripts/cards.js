@@ -27,5 +27,5 @@ const initialCards = [
 
 
 
-initialCards.forEach(renderCard)
+
 
