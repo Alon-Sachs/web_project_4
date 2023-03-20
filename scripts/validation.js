@@ -57,7 +57,7 @@ const showInputError = (formElement, inputElement, errorMessage, validationConfi
   };
   
   enableValidation({formSelector: ".form",
-  inputSelector: ".popup__form-input",
+  inputSelector: ".form__input",
   submitButtonSelector: ".form__submit",
   inactiveButtonClass: "popup__field-submit_inactive",
   inputErrorClass: "form__input-error",

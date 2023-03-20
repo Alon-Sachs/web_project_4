@@ -8,8 +8,8 @@ const editProfileCloseButton = document.querySelector(
 const editProfilePopup = document.querySelector(".profile-popup");
 const editProfileForm = editProfilePopup.querySelector(".popup__form");
 const profileJobField = document.querySelector(".profile__info-job");
-const profilePopupNameInput = document.querySelector(".popup__form_name");
-const profilePopupJobInput = document.querySelector(".popup__form_job");
+const profilePopupNameInput = document.querySelector(".popup__form-name");
+const profilePopupJobInput = document.querySelector(".popup__form-job");
 const profileNameField = document.querySelector(".profile__info-name");
 
 //cards elements
@@ -19,8 +19,8 @@ const newCardPopupCloseButton = document.querySelector(
   ".card-popup__close-btn"
 );
 const cardFormElement = newCardPopup.querySelector(".card-popup__form");
-const cardTitle = newCardPopup.querySelector(".card-popup__form_title");
-const cardLink = newCardPopup.querySelector(".card-popup__form_link");
+const cardTitle = newCardPopup.querySelector(".card-popup__form-title");
+const cardLink = newCardPopup.querySelector(".card-popup__form-link");
 const cardTemplate = document.querySelector("#card-template").content;
 const cardsContainer = document.querySelector(".cards");
 const imagePopupImage = document.querySelector(".img-popup__img");
