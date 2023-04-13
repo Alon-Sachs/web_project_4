@@ -1,6 +1,6 @@
-import Card from "./card.js";
+import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-import { openPopup , closePopup } from "./utils.js";
+import { openPopup, closePopup } from "./utils.js";
 import { initialCards } from "./cards.js";
 
 //profile edit form elements
@@ -32,7 +32,7 @@ const imgPopupCloseButton = document.querySelector(".img-popup__close-btn");
 const imagePopup = document.querySelector(".img-popup");
 
 //validation config
-const validationConfig ={
+const validationConfig = {
   formSelector: ".form",
   inputSelector: ".form__input",
   submitButtonSelector: ".form__submit",
@@ -68,6 +68,22 @@ editProfileCloseButton.addEventListener("click", () =>
 );
 
 //card functions
+function handleImageClick() {
+  this._element.querySelector(".card__img").addEventListener("click", (e) => {
+    const imagePopupTitle = document.querySelector(".img-popup__title");
+    const imagePopupImage = document.querySelector(".img-popup__img");
+    const imagePopup = document.querySelector(".img-popup");
+    imagePopupImage.src = this._link;
+    imagePopupImage.alt = this._title;
+    imagePopupTitle.textContent = this._title;
+    openPopup(imagePopup);
+  });
+}
+
+function createCard(data){
+  const newCard = new Card(data, "#card-template" , handleImageClick);
+  cardsContainer.prepend(newCard.generateCard());
+}
 
 function handleCardFormSubmit(e) {
   e.preventDefault();
@@ -75,8 +91,7 @@ function handleCardFormSubmit(e) {
     link: cardLink.value,
     title: cardTitle.value,
   };
-  const newCard = new Card (data , "#card-template");
-  cardsContainer.prepend(newCard.generateCard());
+  createCard(data);
   closePopup(newCardPopup);
   e.target.reset();
 }
@@ -90,11 +105,10 @@ newCardPopupCloseButton.addEventListener("click", () =>
 imgPopupCloseButton.addEventListener("click", () => closePopup(imagePopup));
 
 initialCards.forEach(card => {
-  const newCard = new Card (card , "#card-template");
-  cardsContainer.prepend(newCard.generateCard());
+  createCard(card);
 });
 
 initalForms.forEach(form => {
-  const newFormValidator = new FormValidator (validationConfig , form);
+  const newFormValidator = new FormValidator(validationConfig, form);
   newFormValidator.enableValidation();
 });

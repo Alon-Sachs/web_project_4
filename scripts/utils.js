@@ -9,7 +9,7 @@ function closePopupEventEscape(evt) {
 
 function closePopupEventClick(evt) {
     if (evt.target.classList.contains("popup_opened")) {
-        const popup = document.querySelector(".popup_opened");
+        const popup = evt.target;
         closePopup(popup);
     }
 }
@@ -21,7 +21,6 @@ function openPopup(popup) {
 }
 
 function closePopup(popup) {
-    initalForms.forEach(form => { form.reset(); });
     popup.classList.remove("popup_opened");
     document.removeEventListener("keydown", closePopupEventEscape);
     document.removeEventListener("mousedown", closePopupEventClick);
