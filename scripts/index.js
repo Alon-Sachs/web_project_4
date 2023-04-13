@@ -69,19 +69,17 @@ editProfileCloseButton.addEventListener("click", () =>
 
 //card functions
 function handleImageClick() {
-  this._element.querySelector(".card__img").addEventListener("click", (e) => {
-    const imagePopupTitle = document.querySelector(".img-popup__title");
-    const imagePopupImage = document.querySelector(".img-popup__img");
-    const imagePopup = document.querySelector(".img-popup");
-    imagePopupImage.src = this._link;
-    imagePopupImage.alt = this._title;
-    imagePopupTitle.textContent = this._title;
-    openPopup(imagePopup);
-  });
+  const imagePopupTitle = document.querySelector(".img-popup__title");
+  const imagePopupImage = document.querySelector(".img-popup__img");
+  const imagePopup = document.querySelector(".img-popup");
+  imagePopupImage.src = this._link;
+  imagePopupImage.alt = this._title;
+  imagePopupTitle.textContent = this._title;
+  openPopup(imagePopup);
 }
 
-function createCard(data){
-  const newCard = new Card(data, "#card-template" , handleImageClick);
+function renderCard(data) {
+  const newCard = new Card(data, "#card-template", handleImageClick);
   cardsContainer.prepend(newCard.generateCard());
 }
 
@@ -91,7 +89,7 @@ function handleCardFormSubmit(e) {
     link: cardLink.value,
     title: cardTitle.value,
   };
-  createCard(data);
+  renderCard(data);
   closePopup(newCardPopup);
   e.target.reset();
 }
@@ -105,7 +103,7 @@ newCardPopupCloseButton.addEventListener("click", () =>
 imgPopupCloseButton.addEventListener("click", () => closePopup(imagePopup));
 
 initialCards.forEach(card => {
-  createCard(card);
+  renderCard(card);
 });
 
 initalForms.forEach(form => {
