@@ -1,4 +1,4 @@
-# Project 6: Around The U.S.
+# Project 4 *sprint 7* : Around The U.S.
 
 ### Overview
 
@@ -13,18 +13,15 @@
 * Advanced Forms validation
 * Advanced dom manipulations functions
 
+**Updates**
+
+* New - Now using oop with 2 new classes.
+* New - Now using modulare Javascript.
+
 **Intro**    
   
-The 6th webproject from practicum webdevelopment course which intreduces javascript, A blog for views around the us which includes editable profile and inserting mechanism.
+The 7th webproject from practicum webdevelopment course which intreduces javascript, A blog for views around the us which includes editable profile and inserting mechanism.
 
-New features with project 5 of practicum:
-Now can add/delete places
-Click on image to zoom on it
-New animations
-
-**New features with project 6**
-Now has form validation (Live js)
-Now can exit popups using escape or pressing on the popup overlay
 
 **Figma**
 

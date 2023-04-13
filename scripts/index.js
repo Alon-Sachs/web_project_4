@@ -1,4 +1,7 @@
-const popups = Array.from(document.querySelectorAll(".popup"));
+import Card from "./card.js";
+import FormValidator from "./FormValidator.js";
+import { openPopup , closePopup } from "./utils.js";
+import { initialCards } from "./cards.js";
 
 //profile edit form elements
 const editProfileButton = document.querySelector(".profile__info-btn");
@@ -21,71 +24,24 @@ const newCardPopupCloseButton = document.querySelector(
 const cardFormElement = newCardPopup.querySelector(".card-popup__form");
 const cardTitle = newCardPopup.querySelector(".card-popup__form-title");
 const cardLink = newCardPopup.querySelector(".card-popup__form-link");
-const cardTemplate = document.querySelector("#card-template").content;
 const cardsContainer = document.querySelector(".cards");
-const imagePopupImage = document.querySelector(".img-popup__img");
-const imagePopupTitle = document.querySelector(".img-popup__title");
+
 
 //img popup elements
 const imgPopupCloseButton = document.querySelector(".img-popup__close-btn");
 const imagePopup = document.querySelector(".img-popup");
 
-//general functions
-function closePopupEventEscape(evt) {
-  if (evt.key === "Escape") {
-    const popup = document.querySelector(".popup_opened");
-    closePopup(popup);
-  }
+//validation config
+const validationConfig ={
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__submit",
+  inactiveButtonClass: "popup__field-submit_inactive",
+  inputErrorClass: "form__input-error",
+  errorClass: "popup__input-error_active"
 }
 
-function closePopupEventClick(evt) {
-  if (evt.target.classList.contains("popup_opened")) {
-    const popup = document.querySelector(".popup_opened");
-    closePopup(popup);
-  }
-}
-
-function openPopup(popup) {
-  popup.classList.add("popup_opened");
-  document.addEventListener("keydown", closePopupEventEscape);
-  document.addEventListener("mousedown", closePopupEventClick);
-}
-
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
-  document.removeEventListener("keydown", closePopupEventEscape);
-  document.removeEventListener("mousedown", closePopupEventClick);
-}
-
-function createCard(data) {
-  const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
-  const cardImg = cardElement.querySelector(".card__img");
-  const cardLinkBtn = cardElement.querySelector(".card__icon");
-  const cardBinBtn = cardElement.querySelector(".card__icon-bin");
-  const cardTitle = cardElement.querySelector(".card__title");
-  cardLinkBtn.addEventListener("click", (e) => {
-    e.target.classList.toggle("card__icon_active");
-  });
-  cardBinBtn.addEventListener("click", (e) => {
-    e.target.parentElement.remove();
-  });
-  cardImg.addEventListener("click", (e) => {
-    const imageTitle = data.name;
-    imagePopupImage.src = e.target.src;
-    imagePopupImage.alt = imageTitle;
-    imagePopupTitle.textContent = imageTitle;
-    openPopup(imagePopup);
-  });
-  cardImg.src = data.link;
-  cardImg.alt = data.name;
-  cardTitle.textContent = data.name;
-  return cardElement;
-}
-
-function renderCard(data) {
-  const cardElement = createCard(data);
-  cardsContainer.prepend(cardElement);
-}
+export const initalForms = Array.from(document.querySelectorAll(validationConfig.formSelector));
 
 //edit profile functions
 function fillProfileForm() {
@@ -117,14 +73,12 @@ function handleCardFormSubmit(e) {
   e.preventDefault();
   const data = {
     link: cardLink.value,
-    name: cardTitle.value,
+    title: cardTitle.value,
   };
-  renderCard(data);
+  const newCard = new Card (data , "#card-template");
+  cardsContainer.prepend(newCard.generateCard());
   closePopup(newCardPopup);
   e.target.reset();
-  const inputList = Array.from(e.target.querySelectorAll(".form__input"));
-  const buttonElement = e.target.querySelector(".form__submit");
-  toggleButtonState(inputList, buttonElement, { inactiveButtonClass: "popup__field-submit_inactive" });
 }
 
 cardFormElement.addEventListener("submit", handleCardFormSubmit);
@@ -135,4 +89,12 @@ newCardPopupCloseButton.addEventListener("click", () =>
 
 imgPopupCloseButton.addEventListener("click", () => closePopup(imagePopup));
 
-initialCards.forEach(renderCard);
+initialCards.forEach(card => {
+  const newCard = new Card (card , "#card-template");
+  cardsContainer.prepend(newCard.generateCard());
+});
+
+initalForms.forEach(form => {
+  const newFormValidator = new FormValidator (validationConfig , form);
+  newFormValidator.enableValidation();
+});
