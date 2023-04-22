@@ -1,0 +1,13 @@
+{
+  "name": "web_project_4",
+  "version": "1.0.0",
+  "description": "**Technologies used**",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && webpack --mode production",
+    "dev": "webpack serve --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}
