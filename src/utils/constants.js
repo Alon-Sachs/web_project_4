@@ -35,3 +35,8 @@ export const validationConfig = {
   errorClass: "popup__input-error_active"
 }
 
+//profile edit form elements
+export const editProfileButton = document.querySelector(".profile__info-btn");
+export const newCardPopupButton = document.querySelector(".profile__add-btn");
+export const cardsContainer = document.querySelector(".cards");
+export const initalForms = Array.from(document.querySelectorAll(validationConfig.formSelector));

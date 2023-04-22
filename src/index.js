@@ -1,16 +1,12 @@
+import "./pages/index.css";
 import Card from "./components/Card.js";
 import Section from "./components/Section.js";
 import FormValidator from "./components/FormValidator.js";
 import PopupWithForm from "./components/PopupWithForm.js";
 import PopupWithImage from "./components/PopupWithImage.js";
 import UserInfo from "./components/UserInfo.js";
-import { initialCards , validationConfig} from "./utils/constants.js";
+import { initialCards, validationConfig, editProfileButton, newCardPopupButton, cardsContainer, initalForms } from "./utils/constants.js";
 
-//profile edit form elements
-const editProfileButton = document.querySelector(".profile__info-btn");
-const newCardPopupButton = document.querySelector(".profile__add-btn");
-const cardsContainer = document.querySelector(".cards");
-const initalForms = Array.from(document.querySelectorAll(validationConfig.formSelector));
 
 
 //initiate objects
@@ -25,7 +21,7 @@ const editProfilePopup = new PopupWithForm(".profile-popup", (data) => {
 editProfilePopup.setEventListeners();
 
 const addCardPopup = new PopupWithForm(".card-popup", (data) => {
-  const card = new Card(data , "#card-template", handleImageClick);
+  const card = new Card(data, "#card-template", handleImageClick);
   cards.addItem(card.generateCard());
 });
 addCardPopup.setEventListeners();
