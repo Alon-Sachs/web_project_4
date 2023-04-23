@@ -47,7 +47,6 @@ export default class FormValidator {
   }
 
   _setEventListeners() {
-    this._formElement.addEventListener("reset", () => { this._disableButton()});
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", (e) => {
         this._checkInputValidity(inputElement);
