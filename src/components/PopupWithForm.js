@@ -1,4 +1,4 @@
-import Popup from './Popup.js';
+import Popup from "./Popup.js";
 
 export default class PopupWithForm extends Popup {
     constructor(popup, submitCallbackFunction) {
@@ -13,31 +13,33 @@ export default class PopupWithForm extends Popup {
         const values = {};
         this._inputs.forEach((input) => {
             values[input.name] = input.value;
-        }
-        );
+        });
         return values;
     }
 
     _onSubmit = (e) => {
         e.preventDefault();
-        this._handleSubmit(this._getInputValues(), this);
-    }
+        this._handleSubmit(this._getInputValues());
+    };
 
-    open() {
-        super.open();
+    _setEventListeners() {
+        super._setEventListeners();
         this._form.addEventListener("submit", this._onSubmit);
     }
 
-    close(){
+    _removeEventListeners() {
+        super._removeEventListeners();
+        this._form.removeEventListener("submit", this._onSubmit);
+    }
+
+    close() {
         super.close();
         this._form.reset();
-        this._form.removeEventListener("submit", this._onSubmit);
     }
 
     prePopulateFields(data) {
         this._inputs.forEach((input) => {
             input.value = data[input.name];
-        }
-        );
+        });
     }
 }

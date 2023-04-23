@@ -15,7 +15,7 @@ const renderCard = (card) => {
   cards.addItem(newCard.generateCard());
 }
 
-function handleImageClick(name , link) {
+function handleImageClick(name, link) {
   imagePopup.open(name, link);
 }
 
@@ -25,20 +25,18 @@ const profile = new UserInfo({ nameSelector: ".profile__info-name", jobSelector:
 
 const imagePopup = new PopupWithImage(".img-popup");
 
-const editProfilePopup = new PopupWithForm(".profile-popup", (data, object) => {
+const editProfilePopup = new PopupWithForm(".profile-popup", (data) => {
   profile.setUserInfo(data);
-  object.close();
+  editProfilePopup.close();
 });
 
-const addCardPopup = new PopupWithForm(".card-popup", (data, object) => {
+const addCardPopup = new PopupWithForm(".card-popup", (data) => {
   renderCard(data);
-  object.close();
+  addCardPopup.close();
 });
 
 const cards = new Section({
-  items: initialCards, renderer: (item) => {
-    renderCard(item);
-  }
+  items: initialCards, renderer: renderCard
 }, ".cards");
 
 cards.renderItems();
@@ -47,13 +45,13 @@ cards.renderItems();
 function openProfilePopup() {
   editProfilePopup.prePopulateFields(profile.getUserInfo());
   editProfilePopup.open();
-  formsValidators["popup__form form"].resetValidation();
+  formsValidators["popup__form"].resetValidation();
 }
 
 //set button event listeners
 newCardPopupButton.addEventListener("click", () => {
   addCardPopup.open();
-  formsValidators["card-popup__form form"].resetValidation();
+  formsValidators["card-popup__form"].resetValidation();
 });
 editProfileButton.addEventListener("click", openProfilePopup);
 
@@ -62,5 +60,5 @@ editProfileButton.addEventListener("click", openProfilePopup);
 initalForms.forEach(form => {
   const newFormValidator = new FormValidator(validationConfig, form);
   newFormValidator.enableValidation();
-  formsValidators[form.classList] = newFormValidator;
+  formsValidators[form.id] = newFormValidator;
 });
