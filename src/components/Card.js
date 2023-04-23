@@ -22,7 +22,7 @@ export default class Card {
         });
 
         this._element.querySelector(".card__img").addEventListener("click", (e) => {
-            this._handleCardClick();
+            this._handleCardClick(this._title, this._link);
         });
 
     }

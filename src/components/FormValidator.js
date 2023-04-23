@@ -47,7 +47,7 @@ export default class FormValidator {
   }
 
   _setEventListeners() {
-    this._formElement.addEventListener("reset", () => { this. _disableFormAfterSubmit() });
+    this._formElement.addEventListener("reset", () => { this._disableButton()});
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", (e) => {
         this._checkInputValidity(inputElement);
@@ -56,14 +56,16 @@ export default class FormValidator {
     });
   }
 
-  _disableFormAfterSubmit() {
-      this._disableButton();
+  resetValidation(){
+    this._inputList.forEach(input => {
+      this._hideInputError(input);
+    })
+    this._disableButton();
   }
 
   enableValidation() {
     this._inputList = [...this._formElement.querySelectorAll(this._settings.inputSelector)];
     this._buttonElement = this._formElement.querySelector(this._settings.submitButtonSelector);
-    this._disableButton();
     this._setEventListeners();
   }
 }
