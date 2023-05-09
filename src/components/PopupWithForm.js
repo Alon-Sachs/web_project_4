@@ -6,6 +6,8 @@ export default class PopupWithForm extends Popup {
         this._handleSubmit = submitCallbackFunction;
         const inputSelector = ".form__input";
         this._form = this._popup.querySelector(".form");
+        this._formSubmitButton = this._form.querySelector(".form__submit");
+        this._originalButtonText = this._formSubmitButton.textContent;
         this._inputs = Array.from(this._form.querySelectorAll(inputSelector));
     }
 
@@ -19,6 +21,7 @@ export default class PopupWithForm extends Popup {
 
     _onSubmit = (e) => {
         e.preventDefault();
+        this._formSubmitButton.textContent = "Saving...";
         this._handleSubmit(this._getInputValues());
     };
 
@@ -34,6 +37,7 @@ export default class PopupWithForm extends Popup {
 
     close() {
         super.close();
+        this._formSubmitButton.textContent = this._originalButtonText;
         this._form.reset();
     }
 

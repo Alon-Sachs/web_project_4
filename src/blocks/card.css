@@ -2,15 +2,15 @@
     border-radius: 15px;
     background-color: white;
     position: relative;
-    max-height: 361px;
 }
 
 .card__infobar {
     display: grid;
     grid-template-columns: 1fr 24px;
+    grid-template-rows: 1fr 1fr;
     justify-content: space-between;
-    align-items: baseline;
-    padding: 25px 20px 31px 20px;
+    align-items: center;
+    padding: 20px 20px 22px 20px;
 }
 
 .card__img {
@@ -24,6 +24,7 @@
 }
 
 .card__title {
+    grid-row: 1 / span 2;
     font-size: 24px;
     font-weight: 900;
     line-height: 29px;
@@ -48,6 +49,17 @@
     border: white 1px solid;
     cursor: pointer;
     transition: opacity linear 0.3s;
+    justify-self: center;
+}
+
+.card__likes-counter {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: black;
+    grid-column-start: 2;
 }
 
 .card__icon-bin {

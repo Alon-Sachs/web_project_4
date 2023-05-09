@@ -8,7 +8,40 @@
 .profile__img {
     border-radius: 100%;
     max-width: 120px;
+    height: 120px;
+    width: 120px;
+    object-fit: cover;
 }
+
+.profile__img-container {
+    position: relative;
+}
+
+.profile__img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.profile__img-overlay:hover {
+    opacity: 1;
+}
+
+.profile__img-overlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 26px;
+}
+
 
 .profile__edit-btn {
     max-width: 24px;
@@ -61,7 +94,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    grid-column:1 / -1;
+    grid-column: 1 / -1;
     grid-row: 2;
 }
 

@@ -1,29 +1,3 @@
-export const initialCards = [
-  {
-    title: "Yosemite Valley",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"
-  },
-  {
-    title: "Lake Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg"
-  },
-  {
-    title: "Bald Mountains",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg"
-  },
-  {
-    title: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg"
-  },
-  {
-    title: "Vanoise National Park",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg"
-  },
-  {
-    title: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
-  }
-];
 
 //validation config
 export const validationConfig = {
@@ -38,5 +12,12 @@ export const validationConfig = {
 //profile edit form elements
 export const editProfileButton = document.querySelector(".profile__info-btn");
 export const newCardPopupButton = document.querySelector(".profile__add-btn");
+export const editAvatarButton = document.querySelector(".profile__img-overlay");
 export const cardsContainer = document.querySelector(".cards");
 export const initalForms = Array.from(document.querySelectorAll(validationConfig.formSelector));
+
+//api keys:
+export const apiCredentials = {
+  token: "3392a7c3-5358-47ee-81fd-62f3278067e5",
+  groupID: "cohort-3-en"
+};

@@ -9,7 +9,7 @@ export default class Popup {
         this._setEventListeners();
     }
 
-    close (){
+    close() {
         this._popup.classList.remove("popup_opened");
         this._removeEventListeners();
     }
@@ -27,7 +27,7 @@ export default class Popup {
     }
 
     _handleBtnClickClose = (evt) => {
-            this.close();
+        this.close();
     }
 
     _setEventListeners() {
