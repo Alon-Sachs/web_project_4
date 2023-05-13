@@ -9,7 +9,7 @@ import PopupWithSubmit from "../components/PopupWithSubmit.js";
 import UserInfo from "../components/UserInfo.js";
 import { editAvatarButton, validationConfig, editProfileButton, newCardPopupButton, initalForms } from "../utils/constants.js";
 
-let cards;
+let cardSection;
 const formsValidators = {};
 const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/cohort-3-en",
@@ -21,8 +21,8 @@ const api = new Api({
 
 //card functions
 const renderCard = (card) => {
-  const newCard = new Card(card, "#card-template", handleImageClick, handleDeleteClick, handleLikeClick);
-  cards.addItem(newCard.generateCard(profile.userId));
+  const newCard = createCard(card);
+  cardSection.addItem(newCard.generateCard(profile.userId));
 }
 
 function handleImageClick(name, link) {
@@ -33,25 +33,24 @@ function handleDeleteClick(id) {
   deleteCardPopup.open(id);
 }
 
-function handleLikeClick() {
-  if (this._isLiked === true) {
-    api.removeLike(this._id)
+function createCard(item) {
+  const cardElement = new Card(item, "#card-template", handleImageClick, handleDeleteClick, handleLikeClick);
+    return cardElement
+}
+
+function handleLikeClick(card) {
+  if (card.isLiked === true) {
+    api.removeLike(card.getId())
       .then((res) => {
-        this._setLikeOff();
-        this._isLiked = false;
-        this._likes = res.likes;
-        this._editLikeCounter();
+        card.removeLike(res);   
       })
       .catch((err) => console.log(err))
 
   }
   else {
-    api.addLike(this._id)
+    api.addLike(card.getId())
       .then((res) => {
-        this._setLikeOn();
-        this._isLiked = true;
-        this._likes = res.likes;
-        this._editLikeCounter();
+        card.addLike(res);
       })
       .catch((err) => console.log(err));
   }
@@ -66,20 +65,17 @@ const profile = new UserInfo({ nameSelector: ".profile__info-name", jobSelector:
 
 const imagePopup = new PopupWithImage(".img-popup");
 
-// api.fetchInitialData([this.getUserInformation, this.getInitialCards])
-// .then(res => console.log(res))
-// .catch(err => console.log(err));
 
 api.fetchInitialData()
   .then(([userInfo, initialCard]) => {
     profile.setUserInfo(userInfo);
     profile.setUserAvatar(userInfo);
     profile.userId = userInfo._id;
-    cards = new Section({
+    cardSection = new Section({
       items: initialCard, renderer: renderCard
     }, ".cards");
 
-    cards.renderItems();
+    cardSection.renderItems();
   })
   .catch(err => console.log(err));
 
@@ -87,21 +83,23 @@ api.fetchInitialData()
 const editProfilePopup = new PopupWithForm(".profile-popup", (data) => {
   api.editUserInformation(data)
     .then((res) => {
-      console.log(res);
       profile.setUserInfo(res);
       editProfilePopup.close();
+      editProfilePopup.renderLoading(false);
     })
+    .catch((err) => console.log(err))
+    .finally((res) => editProfilePopup.renderLoading(false))
 });
 
 const editAvatarPopup = new PopupWithForm(".avatar-popup", (data) => {
-  console.log(data);
   api.editProfilePicture(data)
     .then((res) => {
-      console.log(res);
       profile.setUserAvatar(res);
       editAvatarPopup.close();
+      editAvatarPopup.renderLoading(false);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
+    .finally((res) => editAvatarPopup.renderLoading(false))
 });
 
 const addCardPopup = new PopupWithForm(".card-popup", (data) => {
@@ -112,7 +110,8 @@ const addCardPopup = new PopupWithForm(".card-popup", (data) => {
     })
     .catch((err) => {
       console.log("err", err);
-    });
+    })
+    .finally((res) => addCardPopup.renderLoading(false))
 });
 
 const deleteCardPopup = new PopupWithSubmit(".delete-popup", (data) => {
@@ -128,11 +127,6 @@ const deleteCardPopup = new PopupWithSubmit(".delete-popup", (data) => {
     });
 });
 
-// const cards = new Section({
-//   items: initialCards, renderer: renderCard
-// }, ".cards");
-
-// cards.renderItems();
 
 //profile popup open and prepopulate
 function openProfilePopup() {

@@ -19,6 +19,11 @@ export default class PopupWithSubmit extends Popup {
         this._form.addEventListener("submit", this._onSubmit);
     }
 
+    _removeEventListeners() {
+        super._removeEventListeners();
+        this._form.removeEventListener("submit", this._onSubmit);
+    }
+
     open(id) {
         this.imgId = id;
         super.open();

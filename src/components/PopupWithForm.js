@@ -7,7 +7,7 @@ export default class PopupWithForm extends Popup {
         const inputSelector = ".form__input";
         this._form = this._popup.querySelector(".form");
         this._formSubmitButton = this._form.querySelector(".form__submit");
-        this._originalButtonText = this._formSubmitButton.textContent;
+        this._formSubmitButtonText = this._formSubmitButton.textContent;
         this._inputs = Array.from(this._form.querySelectorAll(inputSelector));
     }
 
@@ -21,7 +21,7 @@ export default class PopupWithForm extends Popup {
 
     _onSubmit = (e) => {
         e.preventDefault();
-        this._formSubmitButton.textContent = "Saving...";
+        this.renderLoading(true);
         this._handleSubmit(this._getInputValues());
     };
 
@@ -37,9 +37,16 @@ export default class PopupWithForm extends Popup {
 
     close() {
         super.close();
-        this._formSubmitButton.textContent = this._originalButtonText;
         this._form.reset();
     }
+
+    renderLoading(isLoading, loadingText='Saving...') {
+        if (isLoading) {
+          this._formSubmitButton.textContent = loadingText;
+        } else {
+          this._formSubmitButton.textContent = this._formSubmitButtonText;
+        }
+      }
 
     prePopulateFields(data) {
         this._inputs.forEach((input) => {
